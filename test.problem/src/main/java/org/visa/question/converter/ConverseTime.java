@@ -13,9 +13,9 @@ public class ConverseTime {
 
 	public String getConversedTime() {
 		ClockConverter converter = new ClockConverter();
-		int hourIn24Hr = Integer.parseInt(hour);
-		int relativeMinute = Integer.parseInt(minute);
-		return converter.getConvertedTime(hourIn24Hr, relativeMinute);
+		int parsedHour = Integer.parseInt(hour);
+		int parsedMinute = Integer.parseInt(minute);
+		return converter.getConvertedTime(parsedHour, parsedMinute);
 	}
 
 }
