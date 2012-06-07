@@ -3,5 +3,4 @@
 * Conversational Grammer can be defined in ClockConverter class - > Method initConverseGrammer(), 
 for simplicity the data is in the same class, it can be abstracted to an external source
 
-
 * Class ConversationalClockUsage has some more usage of the clock
