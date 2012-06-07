@@ -44,6 +44,32 @@ public class TestTimeValidator {
 			TimeValidator tv = new TimeValidator("121:20");
 			Assert.assertEquals(false, tv.validateTime());
 	}
+	
+
+	@Test
+	public void testValidHourFormat(){
+			TimeValidator tv = new TimeValidator("24:60");
+			Assert.assertEquals(true, tv.verifyHourIsNotMoreThen24());
+	}
+	
+	@Test
+	public void testInvalidHourFormat(){
+			TimeValidator tv = new TimeValidator("25:60");
+			Assert.assertEquals(false, tv.verifyHourIsNotMoreThen24());
+	}
+	
+	
+	@Test
+	public void testValidMinuteFormat(){
+			TimeValidator tv = new TimeValidator("25:60");
+			Assert.assertEquals(true, tv.verifyMinuteIsNotMoreThen60());
+	}
+	
+	@Test
+	public void testInvalidMinuteFormat(){
+			TimeValidator tv = new TimeValidator("25:61");
+			Assert.assertEquals(false, tv.verifyMinuteIsNotMoreThen60());
+	}
 
 
 }

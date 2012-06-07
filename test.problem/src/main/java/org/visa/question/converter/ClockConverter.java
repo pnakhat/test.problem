@@ -3,7 +3,6 @@ package org.visa.question.converter;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.visa.question.NumberToWordsConverter;
 
 public class ClockConverter {
 

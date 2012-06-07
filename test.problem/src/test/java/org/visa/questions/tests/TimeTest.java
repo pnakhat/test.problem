@@ -3,8 +3,8 @@ package org.visa.questions.tests;
 import junit.framework.Assert;
 
 import org.junit.Test;
-import org.visa.question.NumberToWordsConverter;
 import org.visa.question.Time;
+import org.visa.question.converter.NumberToWordsConverter;
 import org.visa.question.exceptions.InvalidTimeException;
 
 public class TimeTest {
