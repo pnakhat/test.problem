@@ -10,7 +10,9 @@ public class ClockConverter {
 	protected static HashMap<Integer, String> minuteData;
 	
 	public ClockConverter() {
-		//The conversation grammer is set in the this method, if needed it can be changed.
+		/* The conversation grammer is set in the this method, if needed it can
+		 be changed to have more definition */
+
 		initConverseGrammer();
 	}
 
@@ -37,6 +39,9 @@ public class ClockConverter {
 		String converdMinute;
 		String convertedHour;
 		String convertedTime;
+		
+		/*First conversation dictionary should be checked for any Translation
+		otherwise normal number to word conversion be used*/
 		convertedHour = hourData.get(hour) != null ? hourData.get(hour)
 				: NumberToWordsConverter.convert(hour);
 		converdMinute = minuteData.get(minute) != null ? minuteData
@@ -46,15 +51,16 @@ public class ClockConverter {
 	}
 
 	private String quarterToConversion(int hour, int minute) {
-		String converdMinute;
+		String converterdMinute;
 		String convertedHour;
 		String convertedTime;
 		int nextHour = getNextHour(hour);
 		convertedHour = hourData.get(nextHour) != null ? hourData.get(nextHour)
 				: NumberToWordsConverter.convert(nextHour);
-		converdMinute = minuteData.get(60 - minute) != null ? minuteData
-				.get(60 - minute) : NumberToWordsConverter.convert(60 - minute);
-		convertedTime = converdMinute + " To " + convertedHour;
+		int minuteTo60 = 60 - minute;
+		converterdMinute = minuteData.get(minuteTo60) != null ? minuteData
+				.get(minuteTo60) : NumberToWordsConverter.convert(minuteTo60);
+		convertedTime = converterdMinute + " To " + convertedHour;
 		return convertedTime;
 	}
 

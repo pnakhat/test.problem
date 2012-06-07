@@ -24,5 +24,4 @@ public class NumberToWordsConverter {
 
 
 }
-/** end of http://code.activestate.com/recipes/577312/ }}} */
 

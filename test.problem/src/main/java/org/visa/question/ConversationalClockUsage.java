@@ -30,6 +30,10 @@ public class ConversationalClockUsage {
 		System.out.println(clock.convertTheTime("00:05"));
 		//Ten To Midnight
 		System.out.println(clock.convertTheTime("23:50"));
+		//Quarter Past Twenty Three
+		System.out.println(clock.convertTheTime("23:15"));
+		//Quarter To Midnight
+		System.out.println(clock.convertTheTime("23:45"));
 	
 		
 

@@ -9,7 +9,7 @@ public class ConversationalClock {
 
 	public String convertTheTime(String time){
 		try {
-			Time myTime = new Time(time);
+			Time myTime = new Time(time.trim());
 			ConverseTime converse = new ConverseTime(myTime.getTime());
 			conversedTime = converse.getConversedTime();
 		} catch (InvalidTimeException e) {
