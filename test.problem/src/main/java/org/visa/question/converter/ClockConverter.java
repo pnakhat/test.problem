@@ -3,22 +3,26 @@ package org.visa.question.converter;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class ClockConverter {
 
 	protected static HashMap<Integer, String> hourData;
 	protected static HashMap<Integer, String> minuteData;
-	
+	private String convertedHour;
+	private String converterdMinute;
+	private String convertedTime;
+
 	public ClockConverter() {
-		/* The conversation grammer is set in the this method, if needed it can
-		 be changed to have more definition */
+		/*
+		 * The conversation grammer is set in the this method, if needed it can
+		 * be changed to have more definition
+		 */
 
 		initConverseGrammer();
 	}
 
 	public String getConvertedTime(int hour, int minute) {
 		String convertedTime = null;
-		
+
 		// Exactly Hour
 		if (minute == 00) {
 			convertedTime = exactHourCondition(hour);
@@ -27,33 +31,29 @@ public class ClockConverter {
 		if (minute >= 45) {
 			convertedTime = quarterToConversion(hour, minute);
 		}
-		
-		//Quarter Past Scenario
-		if (minute < 45 && minute >0) {
+
+		// Quarter Past Scenario
+		if (minute < 45 && minute > 0) {
 			convertedTime = quarterPastConversion(hour, minute);
 		}
 		return convertedTime;
 	}
 
 	private String quarterPastConversion(int hour, int minute) {
-		String converdMinute;
-		String convertedHour;
-		String convertedTime;
-		
-		/*First conversation dictionary should be checked for any Translation
-		otherwise normal number to word conversion be used*/
+
+		/*
+		 * First conversation dictionary should be checked for any Translation
+		 * otherwise normal number to word conversion be used
+		 */
 		convertedHour = hourData.get(hour) != null ? hourData.get(hour)
 				: NumberToWordsConverter.convert(hour);
-		converdMinute = minuteData.get(minute) != null ? minuteData
+		converterdMinute = minuteData.get(minute) != null ? minuteData
 				.get(minute) : NumberToWordsConverter.convert(minute);
-		convertedTime = converdMinute + " Past " + convertedHour;
+		convertedTime = converterdMinute + " Past " + convertedHour;
 		return convertedTime;
 	}
 
 	private String quarterToConversion(int hour, int minute) {
-		String converterdMinute;
-		String convertedHour;
-		String convertedTime;
 		int nextHour = getNextHour(hour);
 		convertedHour = hourData.get(nextHour) != null ? hourData.get(nextHour)
 				: NumberToWordsConverter.convert(nextHour);
@@ -65,8 +65,6 @@ public class ClockConverter {
 	}
 
 	private String exactHourCondition(int hour) {
-		String convertedHour;
-		String convertedTime;
 		convertedHour = hourData.get(hour) != null ? hourData.get(hour)
 				: NumberToWordsConverter.convert(hour);
 		convertedTime = convertedHour;
