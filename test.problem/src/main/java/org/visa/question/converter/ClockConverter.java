@@ -8,11 +8,26 @@ public class ClockConverter {
 	protected static HashMap<Integer, String> hourData;
 	protected static HashMap<Integer, String> minuteData;
 	private String convertedHour;
+
+	public String getConvertedHour() {
+		return convertedHour;
+	}
+
+	public void setConvertedHour(String convertedHour) {
+		this.convertedHour = convertedHour;
+	}
+
+	public String getArticleToUse() {
+		return articleToUse;
+	}
+
+	public void setArticleToUse(String articleToUse) {
+		this.articleToUse = articleToUse;
+	}
+
 	private String converterdMinute;
 	private String convertedTime;
 	private int hourToConvert;
-	private int minuteToConvert;
-	private String articleToUse;
 
 	public ClockConverter() {
 		/*
@@ -22,6 +37,41 @@ public class ClockConverter {
 		initConverseGrammer();
 	}
 
+	public String getConverterdMinute() {
+		return converterdMinute;
+	}
+
+	public void setConverterdMinute(String converterdMinute) {
+		this.converterdMinute = converterdMinute;
+	}
+
+	public String getConvertedTime() {
+		return convertedTime;
+	}
+
+	public void setConvertedTime(String convertedTime) {
+		this.convertedTime = convertedTime;
+	}
+
+	public int getHourToConvert() {
+		return hourToConvert;
+	}
+
+	public void setHourToConvert(int hourToConvert) {
+		this.hourToConvert = hourToConvert;
+	}
+
+	public int getMinuteToConvert() {
+		return minuteToConvert;
+	}
+
+	public void setMinuteToConvert(int minuteToConvert) {
+		this.minuteToConvert = minuteToConvert;
+	}
+
+	private int minuteToConvert;
+	private String articleToUse;
+
 	public String getConvertedTime(int hour, int minute) {
 		return calculateConverseTimeBasedOnHourMinute(hour, minute);
 	}
@@ -29,30 +79,31 @@ public class ClockConverter {
 	private String calculateConverseTimeBasedOnHourMinute(int hour, int minute) {
 		setHourMinuteAndArticleToUse(hour, minute);
 
-		convertedHour = hourData.get(hourToConvert) != null ? hourData
-				.get(hourToConvert) : NumberToWordsConverter
-				.convert(hourToConvert);
-		converterdMinute = minuteData.get(minuteToConvert) != null ? minuteData
-				.get(minuteToConvert) : NumberToWordsConverter
-				.convert(minuteToConvert);
+		setConvertedHour(hourData.get(getHourToConvert()) != null ? hourData
+				.get(getHourToConvert()) : NumberToWordsConverter
+				.convert(getHourToConvert()));
+		setConverterdMinute(minuteData.get(getMinuteToConvert()) != null ? minuteData
+				.get(getMinuteToConvert()) : NumberToWordsConverter
+				.convert(getMinuteToConvert()));
+		setConvertedTime(getConverterdMinute() + getArticleToUse()
+				+ getConvertedHour());
 
-		convertedTime = converterdMinute + articleToUse + convertedHour;
-		return convertedTime;
+		return getConvertedTime();
 	}
 
 	private void setHourMinuteAndArticleToUse(int hour, int minute) {
 		if (minute >= 45) {
-			hourToConvert = getNextHour(hour);
-			minuteToConvert = 60 - minute;
-			articleToUse = " To ";
+			setHourToConvert(getNextHour(hour));
+			setMinuteToConvert(60 - minute);
+			setArticleToUse(" To ");
 		} else if (minute < 45 && minute > 0) {
-			hourToConvert = hour;
-			minuteToConvert = minute;
-			articleToUse = " Past ";
+			setHourToConvert(hour);
+			setMinuteToConvert(minute);
+			setArticleToUse(" Past ");
 		} else {
-			hourToConvert = hour;
-			minuteToConvert = 0;
-			articleToUse = "";
+			setHourToConvert(hour);
+			setMinuteToConvert(0);
+			setArticleToUse("");
 		}
 	}
 
@@ -71,6 +122,7 @@ public class ClockConverter {
 		hourData.put(12, "Noon");
 		hourData.put(18, "Six in evening");
 		hourData.put(22, "Ten in Night");
+		hourData.put(17, "Five in evening");
 		minuteData.put(15, "Quarter");
 		minuteData.put(30, "Half");
 		minuteData.put(01, "Just");
