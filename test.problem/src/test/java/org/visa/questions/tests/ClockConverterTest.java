@@ -11,7 +11,7 @@ public class ClockConverterTest {
 	
 	@Test
 	public void testMidnightScenario(){
-		Assert.assertEquals("Midnight", converter.getConvertedTime(00, 00));
+		Assert.assertEquals("Midnight", converter.getConvertedTime(00,00));
 	}
 	
 	@Test

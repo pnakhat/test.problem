@@ -5,7 +5,7 @@ public class TimeValidator {
 	private String time;
 
 	public TimeValidator(String time) {
-		this.time = time;
+		this.time = time.trim();
 	}
 
 	public boolean validateTime() {

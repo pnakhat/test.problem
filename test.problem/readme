@@ -1,5 +1,7 @@
 * Please see class ConversationClock.java - It given an API convertTheTime to convert the time from format HH:MM to Conversational Style
 
+* Class TimeValidator can be extended to have some more validation 
+
 * Conversational Grammer can be defined in ClockConverter class - > Method initConverseGrammer(), 
 for simplicity the data is in the same class, it can be abstracted to an external source
 
