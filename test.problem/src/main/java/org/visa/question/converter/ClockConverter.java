@@ -8,6 +8,19 @@ public class ClockConverter {
 	protected static HashMap<Integer, String> hourData;
 	protected static HashMap<Integer, String> minuteData;
 	private String convertedHour;
+	private String converterdMinute;
+	private String convertedTime;
+	private String articleToUse;
+	private int hourToConvert;
+	private int minuteToConvert;
+	
+	public ClockConverter() {
+		/*
+		 * The conversation grammer is set in the this method, if needed it can
+		 * be changed to have more definition
+		 */
+		initConverseGrammer();
+	}
 
 	public String getConvertedHour() {
 		return convertedHour;
@@ -23,18 +36,6 @@ public class ClockConverter {
 
 	public void setArticleToUse(String articleToUse) {
 		this.articleToUse = articleToUse;
-	}
-
-	private String converterdMinute;
-	private String convertedTime;
-	private int hourToConvert;
-
-	public ClockConverter() {
-		/*
-		 * The conversation grammer is set in the this method, if needed it can
-		 * be changed to have more definition
-		 */
-		initConverseGrammer();
 	}
 
 	public String getConverterdMinute() {
@@ -68,9 +69,6 @@ public class ClockConverter {
 	public void setMinuteToConvert(int minuteToConvert) {
 		this.minuteToConvert = minuteToConvert;
 	}
-
-	private int minuteToConvert;
-	private String articleToUse;
 
 	public String getConvertedTime(int hour, int minute) {
 		return calculateConverseTimeBasedOnHourMinute(hour, minute);
