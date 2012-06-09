@@ -74,7 +74,7 @@ public class ClockConverter {
 		return calculateConverseTimeBasedOnHourMinute(hour, minute);
 	}
 
-	private String calculateConverseTimeBasedOnHourMinute(int hour, int minute) {
+	public String calculateConverseTimeBasedOnHourMinute(int hour, int minute) {
 		setHourMinuteAndArticleToUse(hour, minute);
 
 		setConvertedHour(hourData.get(getHourToConvert()) != null ? hourData

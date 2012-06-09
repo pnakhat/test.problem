@@ -11,8 +11,7 @@ public class ConverseTimeTest {
 	
 	@Test
 	public void testHalfPastConversion() throws InvalidTimeException{
-		Time time = new Time("12:30");
-		ConverseTime converse = new ConverseTime(time.getTime());
+		ConverseTime converse = new ConverseTime(new Time("12:30"));
 		Assert.assertEquals("Half Past Noon", converse.getConversedTime());
 	}
 	
