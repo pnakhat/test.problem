@@ -1,4 +1,4 @@
-package org.visa.question;
+package org.qagile.question;
 
 public class ConversationalClockUsage {
 

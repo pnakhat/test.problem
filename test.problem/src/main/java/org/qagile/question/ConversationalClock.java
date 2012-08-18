@@ -1,7 +1,7 @@
-package org.visa.question;
+package org.qagile.question;
 
-import org.visa.question.converter.ConverseTime;
-import org.visa.question.exceptions.InvalidTimeException;
+import org.qagile.question.converter.ConverseTime;
+import org.qagile.question.exceptions.InvalidTimeException;
 
 public class ConversationalClock {
 	

@@ -1,4 +1,4 @@
-package org.visa.question;
+package org.qagile.question;
 /* This class can have some more validators if needed*/
 public class TimeValidator {
 

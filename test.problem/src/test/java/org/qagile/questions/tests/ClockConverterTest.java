@@ -1,7 +1,7 @@
-package org.visa.questions.tests;
+package org.qagile.questions.tests;
 
 import org.junit.Test;
-import org.visa.question.converter.ClockConverter;
+import org.qagile.question.converter.ClockConverter;
 
 import junit.framework.Assert;
 

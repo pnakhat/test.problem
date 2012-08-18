@@ -1,9 +1,9 @@
-package org.visa.questions.tests;
+package org.qagile.questions.tests;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
-import org.visa.question.ConversationalClock;
+import org.qagile.question.ConversationalClock;
 
 public class ConversionClockIntegrationTest {
 	

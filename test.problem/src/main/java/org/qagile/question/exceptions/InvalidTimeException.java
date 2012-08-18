@@ -1,4 +1,4 @@
-package org.visa.question.exceptions;
+package org.qagile.question.exceptions;
 
 public class InvalidTimeException extends Exception {
 

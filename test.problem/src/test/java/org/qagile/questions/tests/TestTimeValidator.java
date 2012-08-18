@@ -1,9 +1,9 @@
-package org.visa.questions.tests;
+package org.qagile.questions.tests;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
-import org.visa.question.TimeValidator;
+import org.qagile.question.TimeValidator;
 
 public class TestTimeValidator {
 	

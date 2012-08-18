@@ -1,5 +1,10 @@
-package org.visa.question.converter;
+package org.qagile.question.converter;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,7 +90,7 @@ public class ClockConverter {
 				.convert(getMinuteToConvert()));
 		setConvertedTime(getConverterdMinute() + getArticleToUse()
 				+ getConvertedHour());
-
+			
 		return getConvertedTime();
 	}
 

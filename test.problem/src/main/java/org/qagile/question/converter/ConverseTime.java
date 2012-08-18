@@ -1,6 +1,6 @@
-package org.visa.question.converter;
+package org.qagile.question.converter;
 
-import org.visa.question.Time;
+import org.qagile.question.Time;
 
 
 public class ConverseTime {
